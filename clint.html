@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clint for server</title>
+</head>
+
+<body>
+    <h1>hello world</h1>
+    <input type="text" name="name" id="name">
+    <input type="submit" Submit id="submit">
+</body>
+
+<script>
+    //get request
+    // fetch('http://localhost:4200/')
+    //     .then(res => res.json())
+    //     .then(data => console.log(data))
+
+
+
+
+
+
+
+
+
+    // post request
+
+    // const handelPostRequest = () => {
+    //     const userName = document.getElementById('name').value
+    //     fetch('http://localhost:4200/addFoodData', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //             // 'Content-Type': 'application/x-www-form-urlencoded',
+    //         },
+    //         body: JSON.stringify({ userName: userName })
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => console.log(data))
+    // }
+
+    //get one data by it's id
+
+    const handelPostRequest = () => {
+        const id = document.getElementById('name').value
+        fetch(`http://localhost:4200/getOne/${id}`)
+            .then(res => res.json())
+            .then(data => console.log(data))
+    }
+
+    //add event listener in submit btn
+    const submitBtn = document.getElementById('submit')
+    submitBtn.addEventListener('click', handelPostRequest)
+</script>
+
+</html>
